@@ -14,7 +14,7 @@ export default function Projects() {
             <p>{p.description}</p>
             <div className="actions">
               {p.repo && (
-                <a className="button" href={p.repo} target="_blank">
+                <a className="repo-button" href={p.repo} target="_blank">
                   Repo
                 </a>
               )}

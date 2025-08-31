@@ -32,7 +32,11 @@ export default function Home() {
       <div className={`hero ${animate ? 'reveal' : ''}`}>
         <section className="hero-row">
           <h1 className="hero-title">I'm Sean McConville.</h1>
-          <img className="my-portrait" src={`${import.meta.env.BASE_URL}me-bw-no-bg.jpg`} alt="Portrait of Sean McConville" />
+          <img
+            className="my-portrait"
+            src={`${import.meta.env.BASE_URL}me-bw-no-bg.jpg`}
+            alt="Portrait of Sean McConville"
+          />
         </section>
         <h1 className="hero-title-2">Full Stack Software Engineer.</h1>
         <p className="hero-subtitle">I design and build reliable, scalable applications.</p>
