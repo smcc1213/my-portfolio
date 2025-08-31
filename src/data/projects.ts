@@ -25,7 +25,7 @@ export const projects: Project[] = [
     id: 'gasquest',
     title: 'GasQuest Mobile App',
     description:
-      'Xamarin app to find the track gas usage and find nearby gas stations. Senior capstone project. Built with Adam Nethaway.',
+      'Xamarin app to track gas usage and find nearby gas stations. Senior capstone project. Built with Adam Nethaway.',
     tech: ['C#', 'Xamarin', 'Google Maps API'],
   },
   {

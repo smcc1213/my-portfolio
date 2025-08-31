@@ -1,25 +1,82 @@
 @use './variables' as *;
-@use './mixins' as *;
+@use './mixins' as m;
 
-.button {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid $border;
-  background: $paper;
-  transition: transform 0.08s ease;
-  &:hover {
-    transform: translateY(-1px);
+@media (max-width: 600px) {
+  .hero-row {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
   }
-  @include focus-ring;
+  .hero-title {
+    margin-bottom: 0.5rem !important;
+    font-size: 1.5rem !important;
+    text-align: left !important;
+    order: 1 !important;
+  }
+  .my-portrait {
+    width: 90px !important;
+    height: 90px !important;
+    margin-top: 1.5rem !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    align-self: flex-start !important;
+    order: 2 !important;
+    position: static !important;
+  }
 }
 
-.footer {
-  @include container;
-  padding: 28px 24px 60px;
-  color: $muted;
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  margin-bottom: -45px;
+}
+
+.my-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $border;
+  margin: 0 0 0 1rem;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .my-portrait {
+    width: 90px;
+    height: 90px;
+    align-self: flex-start;
+  }
+  .hero-title {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  .hero-title-2 {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .hero-subtitle-2 {
+    font-size: 1rem;
+    text-align: left;
+    margin-top: -30px;
+  }
 }
 
 /* Intro overlay */
@@ -31,7 +88,6 @@
   background: $bg;
   z-index: 9999;
 }
-
 .intro-card {
   background: $paper;
   border: 1px solid $border;
@@ -39,32 +95,28 @@
   box-shadow: $shadow;
   padding: clamp(24px, 6vw, 48px);
 }
-
 .intro-text {
   font-weight: 900;
   letter-spacing: -0.02em;
   font-size: clamp(2rem, 4vw + 1rem, 5rem);
   color: $ink;
 }
-
 .cursor {
   display: inline-block;
   margin-left: 4px;
   animation: blink 1s steps(1, end) infinite;
   opacity: 0.7;
 }
-
 @keyframes blink {
   50% {
     opacity: 0;
   }
 }
 
-/* Reveal effect for hero after intro */
+/* Reveal after intro */
 .hero.reveal {
   animation: fade-in 420ms ease-out both;
 }
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -74,6 +126,155 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Buttons + footer + socials */
+.submit-button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid $border;
+  background: $bg;
+  transition: transform 0.08s ease;
+  &:hover {
+    transform: translateY(-1px);
+    background: $border;
+    &:active {
+      transform: translateY(0);
+      background: $accent;
+    }
+  }
+  width: 40%;
+  margin-left: 30%;
+  font-weight: 600;
+  font-size: 15px;
+  justify-content: center;
+}
+.footer {
+  @include m.container;
+  padding: 28px 24px 60px;
+  color: $muted;
+  color: $muted;
+  border-top: 1px solid $border;
+  display: flex;
+  justify-content: space-between;
+  .social-links {
+    display: flex;
+    gap: 16px;
+    a {
+      font-size: 1.5rem;
+      color: $ink;
+      transition: color 0.2s;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+.contact-socials {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+
+  a {
+    font-size: 2.25rem;
+    color: $ink;
+    transition: color 0.2s;
+    &:hover {
+      color: $accent;
+    }
+    margin-right: 12px;
+    margin-top: 0px;
+  }
+}
+
+/* Contact form */
+.contact-form {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+  .row {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+  }
+  label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    background: $paper;
+    font: inherit;
+  }
+  textarea {
+    resize: vertical;
+  }
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* Snackbar */
+.snackbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background: $paper;
+  border: 1px solid $border;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2000;
+  font-weight: 600;
+  &.success {
+    border-color: #22c55e;
+    color: #15803d;
+  }
+  &.error {
+    border-color: #ef4444;
+    color: #b91c1c;
+  }
+}
+.snackbar.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hero-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  margin-bottom: -45px;
+}
+
+.my-portrait {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid $border;
+  margin: 0 0 0 1rem;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {

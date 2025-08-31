@@ -28,14 +28,17 @@ export default function Home() {
       <span className="intro-text-home" dir="auto">
         Hello, World!
       </span>
+
       <div className={`hero ${animate ? 'reveal' : ''}`}>
-        <section>
+        <section className="hero-row">
           <h1 className="hero-title">I'm Sean McConville.</h1>
-          <h1 className="hero-title-2">Full Stack Software Engineer.</h1>
-          <p className="hero-subtitle">I design and build reliable, scalable applications.</p>
-          <p className="hero-subtitle-2">Available to be part of your team.</p>
+          <img className="my-portrait" src="/me-bw-no-bg.jpg" alt="Portrait of Sean McConville" />
         </section>
+        <h1 className="hero-title-2">Full Stack Software Engineer.</h1>
+        <p className="hero-subtitle">I design and build reliable, scalable applications.</p>
+        <p className="hero-subtitle-2">Available to be part of your team.</p>
       </div>
+
       <section className="selected-block">
         <SelectedProjects />
       </section>

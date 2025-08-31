@@ -1,5 +1,4 @@
 @use './variables' as *;
-
 h1,
 h2,
 h3 {
@@ -23,7 +22,9 @@ p {
   font-size: $step--1;
   color: $muted;
 }
-.mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: $step--1;
+.intro-text-home {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: $step-0;
+  color: $muted;
 }

@@ -1,18 +1,16 @@
 $bg: #f4f5f7;
 $paper: #ffffff;
-$ink: #0f172a; // deep ink
-$muted: #475569; // secondary text
-$accent: #b7ff3c; // lime ribbon/accent
-$border: #e5e7eb; // borders
+$ink: #0f172a;
+$muted: #475569;
+$accent: #ff36b5;
+$border: #e5e7eb;
 $shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 
 $radius: 16px;
 $container: 1100px;
 
-// fluid type scale
-$step--2: clamp(0.8rem, 0.75rem + 0.2vw, 0.95rem);
 $step--1: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);
 $step-0: clamp(1.05rem, 1rem + 0.5vw, 1.15rem);
 $step-1: clamp(1.3rem, 1.1rem + 1.2vw, 1.6rem);
-$step-2: clamp(2.2rem, 2rem + 2.2vw, 3.2rem); // hero line 1
-$step-3: clamp(2.6rem, 2.4rem + 3vw, 4.2rem); // hero line 2
+$step-2: clamp(2.2rem, 2rem + 2.2vw, 3.2rem);
+$step-3: clamp(2.6rem, 2.4rem + 3vw, 4.2rem);

@@ -1,11 +1,26 @@
 @use './variables' as *;
 @use './mixins' as *;
 
+@media (max-width: 370px) {
+  .topnav {
+    flex-wrap: wrap;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-item {
+    font-size: 0.95rem;
+    padding: 6px 6px;
+  }
+}
+
 .shell {
   @include container;
   padding-block: 40px;
 }
-
 .frame {
   @include card;
   padding: 40px;
@@ -14,46 +29,48 @@
 
 .topnav {
   display: flex;
-  gap: 24px;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
-  justify-content: flex-start;
-  a {
+  margin-bottom: 24px;
+
+  .brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-item {
     padding: 8px 10px;
     border-radius: 8px;
-    @include focus-ring;
+    text-decoration: none;
+    transition: background 0.2s;
+
     &:hover {
       background: #f8fafc;
     }
-    margin-left: 16px;
+  }
+
+  .active {
+    background: #eef2ff;
+    border: 1px solid #e2e8f0;
   }
 }
 
-/* HERO + SELECTED PROJECTS */
 .hero {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 48px;
+  gap: 28px;
   align-items: start;
+  margin-bottom: 24px;
+}
 
-  .hero-subtitle {
-    margin-top: 12px;
-    margin-bottom: 0px;
-    max-width: 60ch;
-  }
-
-  .hero-subtitle-2 {
-    margin-top: 8px;
-    margin-bottom: 50px;
-    font-weight: 600;
-    color: $muted;
-    max-width: 60ch;
-  }
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
+.selected-block {
+  margin-top: 8px;
 }
 
 .selected {
@@ -74,7 +91,6 @@
     align-items: center;
     padding: 14px 0;
     border-bottom: 1px solid $border;
-
     a {
       display: contents;
     }
@@ -94,7 +110,6 @@
   }
 }
 
-/* PROJECT CARDS GRID */
 .cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -117,7 +132,7 @@
   }
 }
 
-/* RIBBON (LIME TICKER) */
+/* Ribbon */
 .ribbon {
   position: relative;
   margin-top: 28px;
@@ -125,7 +140,6 @@
   overflow: hidden;
   border: 1px solid $border;
   background: $accent;
-
   .track {
     display: flex;
     gap: 40px;
@@ -145,26 +159,11 @@
     animation-play-state: paused;
   }
 }
-
-.intro-text-home {
-  display: flex;
-  margin-bottom: 20px;
-  font-size: $step-0;
-  font-weight: 500;
-  color: $muted;
-}
-
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ribbon .track {
-    animation: none;
   }
 }
