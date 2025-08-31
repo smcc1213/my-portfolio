@@ -194,6 +194,12 @@
   }
 }
 
+.repo-button {
+  &:hover {
+    color: $accent;
+  }
+}
+
 /* Contact form */
 .contact-form {
   display: grid;
