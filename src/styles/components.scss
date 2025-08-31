@@ -1,0 +1,23 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid $border;
+  background: $paper;
+  transition: transform 0.08s ease;
+  &:hover {
+    transform: translateY(-1px);
+  }
+  @include focus-ring;
+}
+
+.footer {
+  @include container;
+  padding: 28px 24px 60px;
+  color: $muted;
+}

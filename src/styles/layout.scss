@@ -1,0 +1,161 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+.shell {
+  @include container;
+  padding-block: 40px;
+}
+
+.frame {
+  @include card;
+  padding: 40px;
+  position: relative;
+}
+
+.topnav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+  a {
+    padding: 8px 10px;
+    border-radius: 8px;
+    @include focus-ring;
+    &:hover {
+      background: #f8fafc;
+    }
+    margin-left: 16px;
+  }
+}
+
+/* HERO + SELECTED PROJECTS (two-column on desktop, single on mobile) */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 360px);
+  gap: 48px;
+  align-items: start;
+
+  .hero-subtitle {
+    margin-top: 12px;
+    max-width: 60ch;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.selected {
+  h3 {
+    font-size: $step--1;
+    color: $muted;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid $border;
+
+    a {
+      display: contents;
+    }
+    span {
+      font-weight: 600;
+    }
+    .arrow {
+      opacity: 0.6;
+      transition:
+        transform 0.15s ease,
+        opacity 0.15s;
+    }
+    &:hover .arrow {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+  }
+}
+
+/* Project cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+.card {
+  grid-column: span 6;
+  @include card;
+  padding: 16px 18px;
+  header {
+    margin-bottom: 6px;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  @media (max-width: 900px) {
+    grid-column: span 12;
+  }
+}
+
+/* Ribbon (lime ticker) */
+.ribbon {
+  position: relative;
+  margin-top: 28px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid $border;
+  background: $accent;
+
+  .track {
+    display: flex;
+    gap: 40px;
+    padding: 10px 16px;
+    will-change: transform;
+    animation: scroll 30s linear infinite;
+  }
+  .pill {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  &:hover .track {
+    animation-play-state: paused;
+  }
+}
+
+.intro-text-home {
+  display: block;
+  margin-bottom: 2rem;
+  font-size: $step-0;
+  font-weight: 500;
+  color: $muted;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ribbon .track {
+    animation: none;
+  }
+}

@@ -1,0 +1,22 @@
+@use './variables' as *;
+
+@mixin container {
+  max-width: $container;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@mixin card {
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $ink;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+}

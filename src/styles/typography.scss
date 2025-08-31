@@ -1,0 +1,29 @@
+@use './variables' as *;
+
+h1,
+h2,
+h3 {
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+h1 {
+  font-size: $step-3;
+  line-height: 0.95;
+}
+h2 {
+  font-size: $step-1;
+}
+p {
+  margin: 0 0 1rem;
+  color: $muted;
+  font-size: $step-0;
+}
+.small {
+  font-size: $step--1;
+  color: $muted;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: $step--1;
+}
