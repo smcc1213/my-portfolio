@@ -1,69 +1,29 @@
-# React + TypeScript + Vite
+# Sean McConville – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal developer portfolio built with **React + TypeScript + SCSS**, deployed to **GitHub Pages**.  
+It includes an intro animation, a projects showcase, and a contact form (powered by [Formspree](https://formspree.io)).
 
-Currently, two official plugins are available:
+👉 **Live site:** [https://smcc1213.github.io/my-portfolio](https://smcc1213.github.io/my-portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- **Intro animation** – typewriter effect cycling through greetings, fades into hero section.
+- **Responsive hero** – text + professional photo, adapts to mobile/desktop layouts.
+- **Projects showcase** – highlights selected work, links to repos and demos.
+- **Ribbon highlight** – scrolling banner with career highlights.
+- **Contact form** – sends directly to my email via Formspree, with snackbar feedback.
+- **Accessible nav + footer** – ARIA labels, keyboard friendly, GitHub/LinkedIn icons.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tech Stack
+- [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (build + dev server)
+- [SCSS](https://sass-lang.com/) for styling
+- [React Router](https://reactrouter.com/) for navigation
+- [React Icons](https://react-icons.github.io/react-icons/) for social links
+- [Formspree](https://formspree.io/) for form handling
+- [GitHub Pages](https://pages.github.com/) for free hosting
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+---
