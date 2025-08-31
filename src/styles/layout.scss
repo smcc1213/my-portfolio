@@ -1,0 +1,169 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@media (max-width: 370px) {
+  .topnav {
+    flex-wrap: wrap;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-item {
+    font-size: 0.95rem;
+    padding: 6px 6px;
+  }
+}
+
+.shell {
+  @include container;
+  padding-block: 40px;
+}
+.frame {
+  @include card;
+  padding: 40px;
+  position: relative;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .brand {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-item {
+    padding: 8px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #f8fafc;
+    }
+  }
+
+  .active {
+    background: #eef2ff;
+    border: 1px solid #e2e8f0;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.selected-block {
+  margin-top: 8px;
+}
+
+.selected {
+  h3 {
+    font-size: $step--1;
+    color: $muted;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid $border;
+    a {
+      display: contents;
+    }
+    span {
+      font-weight: 600;
+    }
+    .arrow {
+      opacity: 0.6;
+      transition:
+        transform 0.15s ease,
+        opacity 0.15s;
+    }
+    &:hover .arrow {
+      transform: translateX(4px);
+      opacity: 1;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+.card {
+  grid-column: span 6;
+  @include card;
+  padding: 16px 18px;
+  header {
+    margin-bottom: 6px;
+  }
+  .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  @media (max-width: 900px) {
+    grid-column: span 12;
+  }
+}
+
+/* Ribbon */
+.ribbon {
+  position: relative;
+  margin-top: 28px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid $border;
+  background: $accent;
+  .track {
+    display: flex;
+    gap: 40px;
+    padding: 10px 16px;
+    will-change: transform;
+    animation: scroll 30s linear infinite;
+  }
+  .pill {
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 6px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  &:hover .track {
+    animation-play-state: paused;
+  }
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
