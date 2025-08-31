@@ -29,15 +29,24 @@
   }
 }
 
-/* HERO + SELECTED PROJECTS (two-column on desktop, single on mobile) */
+/* HERO + SELECTED PROJECTS */
 .hero {
   display: grid;
-  grid-template-columns: 1fr minmax(260px, 360px);
+  grid-template-columns: 1fr;
   gap: 48px;
   align-items: start;
 
   .hero-subtitle {
     margin-top: 12px;
+    margin-bottom: 0px;
+    max-width: 60ch;
+  }
+
+  .hero-subtitle-2 {
+    margin-top: 8px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    color: $muted;
     max-width: 60ch;
   }
 
@@ -85,7 +94,7 @@
   }
 }
 
-/* Project cards grid */
+/* PROJECT CARDS GRID */
 .cards {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -108,7 +117,7 @@
   }
 }
 
-/* Ribbon (lime ticker) */
+/* RIBBON (LIME TICKER) */
 .ribbon {
   position: relative;
   margin-top: 28px;
@@ -138,8 +147,8 @@
 }
 
 .intro-text-home {
-  display: block;
-  margin-bottom: 2rem;
+  display: flex;
+  margin-bottom: 20px;
   font-size: $step-0;
   font-weight: 500;
   color: $muted;

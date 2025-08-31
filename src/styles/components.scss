@@ -21,3 +21,67 @@
   padding: 28px 24px 60px;
   color: $muted;
 }
+
+/* Intro overlay */
+.intro {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: $bg;
+  z-index: 9999;
+}
+
+.intro-card {
+  background: $paper;
+  border: 1px solid $border;
+  border-radius: 16px;
+  box-shadow: $shadow;
+  padding: clamp(24px, 6vw, 48px);
+}
+
+.intro-text {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4vw + 1rem, 5rem);
+  color: $ink;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s steps(1, end) infinite;
+  opacity: 0.7;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Reveal effect for hero after intro */
+.hero.reveal {
+  animation: fade-in 420ms ease-out both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+  .hero.reveal {
+    animation: none;
+  }
+}
