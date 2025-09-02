@@ -98,7 +98,7 @@ export default function About() {
     >
       <div style={{ gridColumn: 1, justifySelf: 'end', alignSelf: 'start' }}>
         <img
-          src={`${import.meta.env.BASE_URL}bey-the-dog.jpg`}
+          src={bey}
           alt="Bey McConville portrait left"
           style={{
             width: '175px',
@@ -141,7 +141,7 @@ export default function About() {
       </div>
       <div style={{ gridColumn: 3, justifySelf: 'start', alignSelf: 'end' }}>
         <img
-          src={`${import.meta.env.BASE_URL}sean-about-pic-bw.jpg`}
+          src={sean}
           alt="Sean McConville portrait right"
           style={{
             width: '115px',
