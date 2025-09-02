@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import bey from '../assets/bey-the-dog.jpg';
+import sean from '../assets/sean-about-pic-bw.jpg'
+
 export default function About() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -21,7 +24,7 @@ export default function About() {
         }}
       >
         <img
-          src="/bey-the-dog.jpg"
+          src={bey}
           alt="Bey McConville portrait top"
           style={{
             width: '120px',
@@ -64,7 +67,7 @@ export default function About() {
           </p>
         </div>
         <img
-          src="/sean-about-pic-bw.jpg"
+          src={sean}
           alt="Sean McConville portrait bottom"
           style={{
             width: '100px',
