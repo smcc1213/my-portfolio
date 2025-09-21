@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const item = [
   { title: 'Zeek Cyberpunk Dashboard', href: '/projects#zeek' },
-  { title: 'Flashcard App', href: '/projects#flashcard' },
+  { title: 'Flashcard App', href: '/projects#flashcards' },
   { title: 'GasQuest Mobile App', href: '/projects#gasquest' },
   { title: 'Meditation and Journal App', href: '/projects#meditation' },
   { title: 'Portfolio Website', href: '/projects#portfolio' },
