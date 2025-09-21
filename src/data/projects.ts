@@ -10,10 +10,11 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'zeek',
-    title: 'Zeek Cyberpunk Dashboard (Coming Soon)',
+    title: 'Zeek Cyberpunk Dashboard',
     description:
       'PyQt5 dashboard to visualize Zeek logs, suspicious activity, and system telemetry.',
     tech: ['Python', 'PyQt5', 'Zeek'],
+    repo: 'https://github.com/smcc1213/Cyberpunk-Python-Dashboard',
   },
   {
     id: 'flashcards',
