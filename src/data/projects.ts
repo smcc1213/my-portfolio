@@ -47,4 +47,12 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'Vite', 'Sass'],
     repo: 'https://github.com/smcc1213/my-portfolio',
   },
+  {
+    id: 'simpletask',
+    title: 'Simple Tasks To-Do App',
+    description:
+      'A simple cross-platform ASP.NET Core Razor Pages Todo App built with Entity Framework Core and SQLite.Runs on Ubuntu + VS Code but works anywhere .NET 9 is supported.',
+    tech: ['C#', 'ASP.NET Core', 'Entity Framework Core', 'SQLite'],
+    repo: 'https://github.com/smcc1213/Simple-Tasks',
+  },
 ];
