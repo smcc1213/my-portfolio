@@ -5,6 +5,7 @@ const item = [
   { title: 'Flashcard App', href: '/projects#flashcards' },
   { title: 'GasQuest Mobile App', href: '/projects#gasquest' },
   { title: 'Meditation and Journal App', href: '/projects#meditation' },
+  { title: 'Simple Tasks To-Do App', href: '/projects#simpletask' },
   { title: 'Portfolio Website', href: '/projects#portfolio' },
 ];
 

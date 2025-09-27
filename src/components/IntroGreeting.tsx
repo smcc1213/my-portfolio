@@ -10,12 +10,9 @@ export default function IntroGreeting({ onDone }: Props) {
       'Bonjour', // French
       'Ciao', // Italian
       'Hallo', // German
-      'こんにちは', // Japanese
       '안녕하세요', // Korean
-      '你好', // Chinese
-      'Olá', // Portuguese
       'مرحبا', // Arabic
-      'Salam', // Persian
+      'こんにちは', // Japanese
       'Hello, World!', // final
     ],
     []
