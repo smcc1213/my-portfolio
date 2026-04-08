@@ -38,9 +38,8 @@ export default function Home() {
             alt="Portrait of Sean McConville"
           />
         </section>
-        <h1 className="hero-title-2">Full Stack Software Engineer.</h1>
+        <h1 className="hero-title-2">DevOps and Full-Stack Software Engineer.</h1>
         <p className="hero-subtitle">I design and build reliable, scalable applications.</p>
-        <p className="hero-subtitle-2">Available to be part of your team.</p>
       </div>
 
       <section className="selected-block">
